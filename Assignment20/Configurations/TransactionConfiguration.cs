@@ -22,7 +22,8 @@ namespace Assignment20.Configurations
             t.Property(t => t.Note).HasMaxLength(200);
             t.HasOne(t => t.Account)
                 .WithMany(a => a.Transactions)
-                .HasForeignKey(t => t.AccountId);
+                .HasForeignKey(t => t.AccountId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

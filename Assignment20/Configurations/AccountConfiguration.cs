@@ -15,7 +15,6 @@ namespace Assignment20.Configurations
         {
             a.ToTable("Accounts");
             a.HasKey(a => a.AccountNumber);
-            a.Property(a => a.AccountNumber).UseIdentityColumn(1000,5);
             a.Property(a => a.CurrentBalance).HasPrecision(18, 2);
             a.Property(a => a.AccountType).HasConversion<string>().HasMaxLength(50).IsRequired();
             a.Property(a => a.OpeningDate).HasDefaultValueSql("GETDATE()");

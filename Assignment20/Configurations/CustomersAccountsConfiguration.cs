@@ -20,10 +20,12 @@ namespace Assignment20.Configurations
             ca.Property(ca => ca.OwnershipStartDate).HasDefaultValueSql("GETDATE()").IsRequired();
             ca.HasOne(ca => ca.Customer)
                 .WithMany(c => c.Accounts)
-                .HasForeignKey(ca => ca.CustomerId);
+                .HasForeignKey(ca => ca.CustomerId)
+                .OnDelete(DeleteBehavior.Cascade);
             ca.HasOne(ca => ca.Account)
                 .WithMany(a => a.Customers)
-                .HasForeignKey(ca => ca.AccountId);
+                .HasForeignKey(ca => ca.AccountId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

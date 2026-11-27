@@ -21,7 +21,8 @@ namespace Assignment20.Configurations
             m.Property(m => m.PhoneNumber).HasMaxLength(30);
             m.HasOne(m => m.ManagedBranch)
                 .WithOne(b => b.BranchManager)
-                .HasForeignKey<Branch>(b => b.ManagerId);
+                .HasForeignKey<Branch>(b => b.ManagerId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

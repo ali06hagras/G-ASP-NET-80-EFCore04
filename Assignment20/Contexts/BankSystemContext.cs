@@ -1,5 +1,6 @@
 ﻿using Assignment20.Configurations;
 using Assignment20.Models;
+using Assignment20.Models.JunctionTable;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -28,5 +29,9 @@ namespace Assignment20.Contexts
 
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Branch> Branches { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Manager> Managers { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<CustomersAccounts> CustomersAccounts { get; set; }
     } 
 }

@@ -9,6 +9,6 @@ namespace Assignment20.Enums
     public enum AccountStatusEnum
     {
         Active = 1,
-        closed
+        Closed
     }
 }

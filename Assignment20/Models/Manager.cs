@@ -8,10 +8,10 @@ namespace Assignment20.Models
 {
     public class Manager
     {
-        public int Id { get; set; } //pk
-        public string FullName { get; set; } //max 150
-        public string Email { get; set; } //max 100
-        public string PhoneNumber { get; set; } //max 30
+        public int Id { get; set; } 
+        public string FullName { get; set; } 
+        public string Email { get; set; } 
+        public string PhoneNumber { get; set; } 
         public DateTime HireDate { get; set; }
         public Branch ManagedBranch { get; set; }
     }

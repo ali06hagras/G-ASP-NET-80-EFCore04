@@ -15,13 +15,14 @@ namespace Assignment20.Configurations
         {
             b.ToTable("Branches");
             b.HasKey(b => b.Code);
-            b.Property(b => b.Code).HasMaxLength(20);
-            b.Property(b => b.Name).HasMaxLength(100);
+            b.Property(b => b.Code).HasMaxLength(20).IsRequired();
+            b.Property(b => b.Name).HasMaxLength(100).IsRequired();
             b.Property(b => b.Address).HasMaxLength(100);
             b.Property(b => b.PhoneNumber).HasMaxLength(30);
             b.HasMany(b => b.Accounts)
                 .WithOne(a => a.Branch)
-                .HasForeignKey(a => a.BranchId);
+                .HasForeignKey(a => a.BranchCode)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
