@@ -14,5 +14,7 @@ namespace Assignment20.Models
         public decimal Amount { get; set; } //(18,2)
         public TransactionTypeEnum TransactionType { get; set; } // convert to string
         public string Note { get; set; } //max 200
+        public int AccountId { get; set; }
+        public Account Account { get; set; }
     }
 }

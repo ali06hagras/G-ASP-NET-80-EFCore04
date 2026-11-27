@@ -13,5 +13,6 @@ namespace Assignment20.Models
         public string Email { get; set; } //max 100
         public string PhoneNumber { get; set; } //max 30
         public DateTime HireDate { get; set; }
+        public Branch ManagedBranch { get; set; }
     }
 }

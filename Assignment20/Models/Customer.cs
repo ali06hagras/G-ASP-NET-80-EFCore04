@@ -1,4 +1,5 @@
 ﻿using Assignment20.Enums;
+using Assignment20.Models.JunctionTable;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,5 +18,6 @@ namespace Assignment20.Models
         public string NationalId { get; set; } //max 20 Unique
         public DateTime DateOfBirth { get; set; }
         public CustomerTypeEnum CustomerType { get; set; } // convert to string
+        public ICollection<CustomersAccounts> Accounts { get; set; } = new List<CustomersAccounts>();
     }
 }
