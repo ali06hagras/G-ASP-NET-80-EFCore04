@@ -82,6 +82,24 @@ namespace Assignment20.Migrations
                         .IsUnique();
 
                     b.ToTable("Branches", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Code = "CAI-01",
+                            Address = "12 Talaat Harb Street, Downtown",
+                            ManagerId = 202,
+                            Name = "Cairo Main Branch",
+                            PhoneNumber = "02-2392-4815"
+                        },
+                        new
+                        {
+                            Code = "ALX-01",
+                            Address = "26 El-Horreya Road, Azarita",
+                            ManagerId = 204,
+                            Name = "Alexandria Branch",
+                            PhoneNumber = "03-486-7291"
+                        });
                 });
 
             modelBuilder.Entity("Assignment20.Models.Customer", b =>
@@ -193,6 +211,24 @@ namespace Assignment20.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Managers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 202,
+                            Email = "john.Tery@bank.com",
+                            FullName = "John Tery",
+                            HireDate = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PhoneNumber = "123-456-7890"
+                        },
+                        new
+                        {
+                            Id = 204,
+                            Email = "reece.James@bank.com",
+                            FullName = "Reece James",
+                            HireDate = new DateTime(2024, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PhoneNumber = "098-765-4321"
+                        });
                 });
 
             modelBuilder.Entity("Assignment20.Models.Transaction", b =>

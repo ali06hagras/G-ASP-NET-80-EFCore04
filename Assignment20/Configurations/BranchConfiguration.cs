@@ -23,6 +23,11 @@ namespace Assignment20.Configurations
                 .WithOne(a => a.Branch)
                 .HasForeignKey(a => a.BranchCode)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            b.HasData(
+                new Branch { Code = "CAI-01", Name = "Cairo Main Branch", Address = "12 Talaat Harb Street, Downtown", PhoneNumber = "02-2392-4815", ManagerId = 202 },
+                new Branch { Code = "ALX-01", Name = "Alexandria Branch", Address = "26 El-Horreya Road, Azarita", PhoneNumber = "03-486-7291", ManagerId = 204 }
+            );
         }
     }
 }

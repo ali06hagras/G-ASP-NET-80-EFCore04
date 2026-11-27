@@ -23,6 +23,11 @@ namespace Assignment20.Configurations
                 .WithOne(b => b.BranchManager)
                 .HasForeignKey<Branch>(b => b.ManagerId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            m.HasData(
+                new Manager { Id = 202, FullName = "John Tery", Email = "john.Tery@bank.com", PhoneNumber = "123-456-7890", HireDate = new DateTime(2020, 1, 1)},
+                new Manager { Id = 204, FullName = "Reece James", Email = "reece.James@bank.com", PhoneNumber = "098-765-4321", HireDate = new DateTime(2024, 1, 15) }
+            );
         }
     }
 }
